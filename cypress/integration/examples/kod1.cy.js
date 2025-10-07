@@ -14,7 +14,7 @@ describe("Kod Landing First Test Suite", function() {
         // Wait for login to complete
        cy.get('#profile-menu-item', { timeout: 10000 })
             .should('be.visible')
-            .click();
+            .click();ss
        
 
     })
