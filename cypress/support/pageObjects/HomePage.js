@@ -1,6 +1,7 @@
-import ProductPage from '../..support/pageObjects/ProductPage'
+import ProductPage from "./ProductPage";
+
 class HomePage {
-    goTo() {
+    goTo(url) {
         cy.visit(url);
     }
     login(username, password) {

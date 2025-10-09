@@ -1,4 +1,4 @@
-import CartPage from '../..support/pageObjects/cartPage'
+import CartPage from "./CartPage";
 
 
 class ProductPage {

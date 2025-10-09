@@ -1,4 +1,5 @@
-import ConfirmationPage from '../..support/pageObjects/ConfirmationPage'
+import ConfirmationPage from "./ConfirmationPage";
+
 class CartPage {
 
 
@@ -14,9 +15,9 @@ class CartPage {
 
         let sum = 0;
 
-        cy.get('tr td:nth-child(4) strong').each(($el) => {
+        return cy.get('tr td:nth-child(4) strong').each(($el) => {
             const amount = Number($el.text().split(" ")[1].trim())
-            sum = sum + ammount
+            sum = sum + amount
         }).then(() => {
 
             return sum

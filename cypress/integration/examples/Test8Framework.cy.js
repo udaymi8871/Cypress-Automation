@@ -1,4 +1,4 @@
-import HomePage from "../../support/pageObjects/Homepage.cy";
+import HomePage from "../../support/pageObjects/HomePage";
 
 describe('End to End ecommerce Test', function () {
 
@@ -16,9 +16,9 @@ describe('End to End ecommerce Test', function () {
 
 
         const productName = this.data.productName
-         homepage = new HomePage()
+        this.homepage = new HomePage()
         this.homepage.goTo('https://rahulshettyacademy.com/loginpagePractise/#')
-        const productPage = homepage.login(this.data.username, this.data.password)
+        const productPage = this.homepage.login(this.data.username, this.data.password)
 
         productPage.pageValidation()
         productPage.verifyCardLimit()
@@ -29,7 +29,7 @@ describe('End to End ecommerce Test', function () {
             expect(sum).to.be.lessThan(200000);
         })
 
-        const ConfirmationPage = cartPage.checkoutItems()
+        const ConfirmationPage = cartPage.chekoutItems()
 
         ConfirmationPage.submitFormDetails()
         ConfirmationPage.getAlertMessage().should('contain', 'success')
