@@ -3,14 +3,19 @@
   "version": "1.0.0",
   "main": "cypress.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:headed": "cypress run --headed"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^15.3.0",
-    "cypress-iframe": "^1.0.1"
+    "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "esbuild": "^0.25.10"
   },
   "dependencies": {
     "aggregate-error": "^3.1.0",

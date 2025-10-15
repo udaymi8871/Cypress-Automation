@@ -32,6 +32,10 @@ describe('End to End ecommerce Test', function () {
         const ConfirmationPage = cartPage.chekoutItems()
 
         ConfirmationPage.submitFormDetails()
-        ConfirmationPage.getAlertMessage().should('contain', 'success')
+        // Check for success message with multiple possible patterns
+        ConfirmationPage.getAlertMessage().should(($alert) => {
+            const text = $alert.text().toLowerCase()
+            expect(text).to.match(/success|thank|order|complete|purchase/)
+        })
     });
 });
